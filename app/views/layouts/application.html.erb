@@ -8,8 +8,25 @@
 </head>
 <body>
 
-<%= notice_message %>
-<%= yield %>
+<div class="container-fluid">
+  <%= render "common/navbar" %>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item">About Me</li>
+        <li class="list-group-item">Facebook</li>
+        <li class="list-group-item">Twitter</li>
+      </ul>
+    </div>
+
+    <div class="col-md-8">
+      <%= notice_message %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<%= render "common/footer" %>
 
 </body>
 </html>

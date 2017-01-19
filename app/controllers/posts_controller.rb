@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path, notice: "新增文章成功！"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def update
 
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to posts_path, ud: "更新文章成功～"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, alert: "刪除文章成功～"
   end
 
   private

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'posts#index'
+  namespace :account do
+    resource :owner, :except => :index
+  end
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_post, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_post, except: [:index, :new, :create, :show]
   def index
     @posts = Post.all
   end
@@ -20,6 +20,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments
   end
 
   def edit

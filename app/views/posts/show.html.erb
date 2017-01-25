@@ -4,4 +4,14 @@
   </div>
   <h2><%= @post.title %></h2>
   <p><%= @post.content %></p>
+  <hr>
+
+  <%= link_to("Comment", new_post_comment_path(@post), class: "btn btn-primary pull-right")%>
+  <br>
+  <% @comments.each do |comment| %>
+    <h4><%= comment.content %></h4>
+    <% if current_user == @post.blog_owner %>
+      <%= link_to("Delete", post_comment_path(comment.post, comment), method: :delete, class: "btn btn-danger pull-right")%>
+    <% end %>
+  <% end %>
 </div>

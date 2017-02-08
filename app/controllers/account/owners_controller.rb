@@ -1,5 +1,5 @@
 class Account::OwnersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def new
     @account_owner = current_user.build_owner
@@ -25,7 +25,7 @@ class Account::OwnersController < ApplicationController
   end
 
   def show
-    @account_owner = current_user.owner
+    @account_owner = User.find(1).owner
   end
 
   private

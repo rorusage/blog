@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   namespace :account do
-    resource :owner, :except => :index
+    resource :owner
   end
   resources :posts do
     resources :comments

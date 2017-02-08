@@ -11,6 +11,7 @@
                   method: :delete, data: {confirm: "Are you sure?"}) %>
     <% end %>
     <br>
+    <p><%= post.created_at.strftime("Submitted at %B %-d, %Y")%></p>
     <%= truncate(post.content)%>
     <hr>
   <% end %>

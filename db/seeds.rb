@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-create_user = User.create([email: 'rorusage@gmail.com',
-                           password: 'rorusage',
-                           password_confirmation: 'rorusage',
-                           name: "rorusage"])
+create_user = User.create([email: 'test@gmail.com',
+                           password: 'test',
+                           password_confirmation: 'test',
+                           name: "test"])
 create_account_owner = Account::Owner.create([user_id: "1",
-                        content: "Hi, This is Rorusage's first self-build blog!"])
+                        content: "Hi, This is Test's first self-build blog!"])
